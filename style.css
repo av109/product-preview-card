@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+:root {
+    --Green500: hsl(158, 36%, 37%);
+    --Green700: hsl(158, 42%, 18%);
+    --Black: hsl(212, 21%, 14%);
+    --Grey: hsl(228, 12%, 48%);
+    --Cream: hsl(30, 38%, 92%);
+    --White: hsl(0, 0%, 100%);
+}
+
+/* Reset default margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+/* Base size only */
+body {
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+/* Everything gets 1.5 */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+    font-weight: normal;
+}
+
+
+body {
+    margin: 0 auto;
+    background-color: var(--Cream);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.card {
+    display: flex;
+    width: 65rem;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.right {
+    width: 50%;
+    height: auto;
+    background-image: url("/images/image-product-desktop.jpg");
+    background-size: cover;
+}
+
+.right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image covers the container while maintaining aspect ratio */
+}
+
+.left {
+    width: 50%;
+    height: auto;
+    background-color: var(--White);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.left p:nth-child(1) {
+    font-size: 1.6rem;
+    color: var(--Grey);
+    margin-bottom: 1rem;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: 0.5rem;
+}
+
+.left h1 {
+    font-size: 3.6rem;
+    color: var(--Black);
+    margin-bottom: 1rem;
+    font-family: "Fraunces", serif;
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.left p:nth-of-type(2) {
+    font-size: 1.6rem;
+    color: var(--Grey);
+    margin-bottom: 2rem;
+    font-family: "Montserrat", sans-serif;
+}
+
+.price {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    /* Ensures vertical alignment */
+    justify-content: flex-start;
+}
+
+
+.price p:nth-child(1) {
+    font-size: 3.6rem;
+    color: var(--Green500);
+    font-family: "Fraunces", serif;
+    font-weight: 700;
+    letter-spacing: normal;
+}
+
+.price p:nth-child(2) {
+    font-size: 1.6rem;
+    /* Adjust font size to match design */
+    color: var(--Grey);
+    text-decoration: line-through;
+    /* Add strikethrough for old price */
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+}
+
+button {
+    margin-top: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background-color: var(--Green500);
+    color: var(--White);
+    border: none;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+
+}
+
+button:hover {
+    background-color: var(--Green700);
+    cursor: pointer;
+}
+
+/* Responsive design */
+
+/* Adjust layout for mobile devices */
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        padding: 2rem;
+    }
+
+    .card {
+        width: 90%;             /* Increase width to match image */
+        flex-direction: column;
+        max-width: 35rem; /* Limit maximum width */
+        margin: 0 auto;   /* Center the card */
+
+    }
+    
+    .right {
+        width: 100%;
+        height: 40vh;           /* Adjust height for image portion */
+        background-image: url("/images/image-product-mobile.jpg"); /* Use mobile image if available */
+    }
+    
+    .left {
+        width: 100%;
+        padding: 2.5rem;        /* Slightly more padding */
+    }
+
+    .left p:nth-child(1) {
+        font-size: 1.4rem;
+        letter-spacing: 0.4rem;
+    }
+
+    .left h1 {
+        font-size: 2.4rem;
+    }
+
+    .left p:nth-of-type(2) {
+        font-size: 1.4rem;
+    }
+
+    .price p:nth-child(1) {
+        font-size: 2.4rem;
+    }
+
+    .price p:nth-child(2) {
+        font-size: 1.4rem;
+    }
+
+    button {
+        padding: 1rem 1.5rem;
+    }
+}
